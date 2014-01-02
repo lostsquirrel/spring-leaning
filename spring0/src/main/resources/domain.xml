@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="demoA" class="cn.net.lisong.spring0.domain.DemoA">
+    <!-- collaborators and configuration for this bean go here -->
+    <constructor-arg ref="demoB" />
+  </bean>
+
+  <bean id="demoB" class="cn.net.lisong.spring0.domain.DemoB">
+    <!-- collaborators and configuration for this bean go here -->
+    <constructor-arg ref="demoA" />
+  </bean>
+  
+  <alias name="demoA" alias="da"/>
+  
+  
+  <!-- more bean definitions go here -->
+  
+  <bean name="consType" class="cn.net.lisong.spring0.domain.ConsType">
+  	<constructor-arg type="double" value="3.14"/>
+  	<constructor-arg type="int" value="2222" />
+  	<constructor-arg type="int" value="1111" />
+  	<constructor-arg type="java.lang.String" value="xxxxx"/>
+  	<constructor-arg type="java.lang.String" value="sssss"/>
+  </bean>
+  
+  <bean name="consTypeName" class="cn.net.lisong.spring0.domain.ConsType">
+  	<constructor-arg name="typeInt2" value="2222" />
+  	<constructor-arg name="typeInt1" value="1111" />
+  	<constructor-arg name="typeString1" value="xxxxx"/>
+  	<constructor-arg name="typeDouble1" value="3.14"/>
+  	<constructor-arg name="typeString2" value="sssss"/>
+  </bean>
+
+</beans>
