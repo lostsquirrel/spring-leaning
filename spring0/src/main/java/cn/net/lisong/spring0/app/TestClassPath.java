@@ -1,26 +1,24 @@
 package cn.net.lisong.spring0.app;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import cn.net.lisong.spring0.dao.SetterDemoDAO;
+import cn.net.lisong.spring0.service.SetterDemoService;
+
 public class TestClassPath {
 
+	private static final Log log = LogFactory.getLog(TestClassPath.class);
+	
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("dao.xml", "service.xml");
 		
-		//System.out.println(context.getBean("setterDemoService"));
-		//SetterDemoServiceImpl [setterDemoDAO=cn.net.lisong.spring0.dao.impl.SetterDemoDAOImpl@eb0945]
+		SetterDemoDAO SetterDemoDAO = (SetterDemoDAO) context.getBean("setterDemoDAO");
+		log.info(SetterDemoDAO);
 		
-		/*
-		System.out.println(context.getBean("demoA"));
-		System.out.println(context.getBean("da"));
-		System.out.println(context.getBean("consType"));
-		System.out.println(context.getBean("consTypeIndex"));
-		*/
-		
-		
-		//System.out.println(context.getBean("consTypeName"));
-		//org.springframework.beans.factory.BeanCurrentlyInCreationException
-
+		SetterDemoService setterDemoService = (SetterDemoService) context.getBean("setterDemoService");
+		log.info(setterDemoService);
 	}
 }
