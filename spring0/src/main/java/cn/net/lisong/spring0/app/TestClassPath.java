@@ -8,7 +8,7 @@ public class TestClassPath {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
 		
-		//System.out.println(context.getBean("setterDemoService"));
+		System.out.println(context.getBean("setterDemoService"));
 		//SetterDemoServiceImpl [setterDemoDAO=cn.net.lisong.spring0.dao.impl.SetterDemoDAOImpl@eb0945]
 		
 		/*
