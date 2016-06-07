@@ -1,4 +1,4 @@
-spring-leaning
+spring-mvc
 ==============
 
-learn spring step by step
+learn spring mvc
